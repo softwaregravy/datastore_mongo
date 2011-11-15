@@ -1,0 +1,25 @@
+<%= form_for(@mongo_string) do |f| %>
+  <% if @mongo_string.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@mongo_string.errors.count, "error") %> prohibited this mongo_string from being saved:</h2>
+
+      <ul>
+      <% @mongo_string.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :field_1 %><br />
+    <%= f.text_field :field_1 %>
+  </div>
+  <div class="field">
+    <%= f.label :field_2 %><br />
+    <%= f.text_field :field_2 %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

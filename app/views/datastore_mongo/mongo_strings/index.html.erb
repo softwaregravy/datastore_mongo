@@ -1,0 +1,25 @@
+<h1>Listing mongo_strings</h1>
+
+<table>
+  <tr>
+    <th>Field 1</th>
+    <th>Field 2</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @mongo_strings.each do |mongo_string| %>
+  <tr>
+    <td><%= mongo_string.field_1 %></td>
+    <td><%= mongo_string.field_2 %></td>
+    <td><%= link_to 'Show', mongo_string %></td>
+    <td><%= link_to 'Edit', edit_mongo_string_path(mongo_string) %></td>
+    <td><%= link_to 'Destroy', mongo_string, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Mongo string', new_mongo_string_path %>
